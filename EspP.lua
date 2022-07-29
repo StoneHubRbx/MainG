@@ -42,8 +42,8 @@ local function DrawESP(plr)
     Box.PointB = Vector2.new(0, 0)
     Box.PointC = Vector2.new(0, 0)
     Box.PointD = Vector2.new(0, 0)
-    Box.Color = Color3.fromRGB(25, 25, 25)
-    Box.Thickness = 1
+    Box.Color = Color3.fromRGB(255, 255, 255)
+    Box.Thickness = 2
     Box.Transparency = 1
 
 
@@ -56,11 +56,11 @@ local function DrawESP(plr)
 
                 if OnScreen and getgenv().Visibility and getgenv().nameESP then
                     Name.Position = Vector2.new(Vector.X, Vector.Y + math.clamp(Distance / 10, 10, 10) - 10)
-                    Name.Size = 15.5
+                    Name.Size = 17.5
                 if getgenv().useTeamColor then
                     Name.Color = plr.TeamColor.Color
                 else
-                    Name.Color = Color3.fromRGB(25, 25, 25)
+                    Name.Color = Color3.fromRGB(255,255,255)
                 end
                 if getgenv().distance then
                     Name.Text = string.format("[%s | %s] \n [%s|%s]",  plr.Name, tostring(math.floor(Distance)), math.round(plr.Character:FindFirstChild("Humanoid").Health), plr.Character:FindFirstChild("Humanoid").MaxHealth)
@@ -94,7 +94,7 @@ local function DrawESP(plr)
                     if getgenv().useTeamColor then
                         Box.Color = plr.TeamColor.Color
                     else
-                        Box.Color = Color3.fromRGB(25, 25, 25)
+                        Box.Color = Color3.fromRGB(255,255,255)
                     end
                     
                     Box.Thickness = math.clamp(3 - (Distance / 100), 0, 3)
